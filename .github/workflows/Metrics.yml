@@ -115,8 +115,8 @@ jobs:
           plugin_repositories_pinned: 5
           plugin_repositories_random: 1
           plugin_repositories_starred: 2
-          plugin_stargazers: yes
-          plugin_stargazers_charts: yes
+          plugin_stargazers: no
+          plugin_stargazers_charts: no
           plugin_stargazers_charts_type: graph
           plugin_stargazers_days: 90
           plugin_traffic: yes
@@ -129,6 +129,7 @@ jobs:
           plugin_steam_recent_games_limit: 1
           plugin_steam_sections: player, most-played, recently-played
           plugin_steam_user: lossjj
+          plugin_steam_token: ${{ secrets.STEAM_API_KEY }}
           
           # Plugins - Coding activity
           plugin_wakatime: yes
@@ -138,3 +139,5 @@ jobs:
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
           plugin_wakatime_url: https://wakatime.com
           plugin_wakatime_user: chicagojoe
+          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
+          
