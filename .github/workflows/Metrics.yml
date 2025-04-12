@@ -26,6 +26,9 @@ jobs:
           output_action: commit
           committer_branch: metrics-renders
           committer_message: "chore: update metrics [skip ci]"
+
+          # Workflow cleanup
+          clean_workflows: yes        
           
           # Error handling and retries
           retries: 3
@@ -38,7 +41,7 @@ jobs:
           config_display: columns
           config_octicon: yes
           config_padding: 5, 8 + 11%
-          config_presets: lunar-red
+          config_presets: "@lunar-red"
           config_timezone: America/Chicago
           config_twemoji: yes
           
