@@ -3,9 +3,10 @@ name: Metrics
 on:
   # Schedule updates (each day)
   schedule: [{cron: "0 7 * * *"}]
-  # Lines below let you run workflow manually and on each commit
+  # Run workflow manually and on each commit to main branches
   workflow_dispatch:
   push: {branches: ["master", "main"]}
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -14,22 +15,13 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          use_prebuilt_image: yes
+          # GitHub authentication
           token: ${{ secrets.METRICS_TOKEN }}
-
-          # Options
-          user: chicago-joe
-          template: classic
-          base: header, activity, community, repositories, metadata
-          base_indepth: yes
-          config_display: columns
-          config_octicon: yes
-          config_padding: 5, 8 + 11%
-          config_presets: "@lunar-red"
-          config_timezone: America/Chicago
-          config_twemoji: yes
           
-          # Output configuration - Updated for clean commit history
+          # User configuration
+          user: chicago-joe
+          
+          # Output configuration
           filename: github-metrics.svg
           output_action: commit
           committer_branch: metrics-renders
@@ -41,7 +33,20 @@ jobs:
           retries_output_action: 5
           retries_delay_output_action: 120
           
-          # Plugins configuration - Kept all your existing plugin settings
+          # Visual configuration
+          template: classic
+          config_display: columns
+          config_octicon: yes
+          config_padding: 5, 8 + 11%
+          config_presets: lunar-red
+          config_timezone: America/Chicago
+          config_twemoji: yes
+          
+          # Base sections
+          base: header, activity, community, repositories, metadata
+          base_indepth: yes
+          
+          # Plugins - Achievements & Activity
           plugin_achievements: yes
           plugin_achievements_display: detailed
           plugin_achievements_limit: 5
@@ -54,6 +59,8 @@ jobs:
           plugin_activity_load: 300
           plugin_activity_timestamps: yes
           plugin_activity_visibility: all
+          
+          # Plugins - Calendar & Habits
           plugin_calendar: yes
           plugin_calendar_limit: 3
           plugin_habits: yes
@@ -65,10 +72,14 @@ jobs:
           plugin_habits_languages_limit: 8
           plugin_habits_languages_threshold: 10%
           plugin_habits_trim: yes
+          
+          # Plugins - Profile & Development
           plugin_introduction: yes
           plugin_introduction_title: yes
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
+          
+          # Plugins - Languages & Code
           plugin_languages: yes
           plugin_languages_analysis_timeout: 15
           plugin_languages_analysis_timeout_repositories: 7.5
@@ -86,12 +97,16 @@ jobs:
           plugin_lines_history_limit: 5
           plugin_lines_repositories_limit: 4
           plugin_lines_sections: base
+          
+          # Plugins - Notable contributions
           plugin_notable: yes
           plugin_notable_from: all
           plugin_notable_indepth: yes
           plugin_notable_repositories: yes
           plugin_notable_self: yes
           plugin_notable_types: commit
+          
+          # Plugins - Repositories & Community
           plugin_repositories: yes
           plugin_repositories_order: featured, pinned, starred, random
           plugin_repositories_pinned: 5
@@ -101,6 +116,9 @@ jobs:
           plugin_stargazers_charts: yes
           plugin_stargazers_charts_type: graph
           plugin_stargazers_days: 90
+          plugin_traffic: yes
+          
+          # Plugins - Gaming & External
           plugin_steam: yes
           plugin_steam_achievements_limit: 3
           plugin_steam_games_limit: 2
@@ -108,7 +126,8 @@ jobs:
           plugin_steam_recent_games_limit: 1
           plugin_steam_sections: player, most-played, recently-played
           plugin_steam_user: lossjj
-          plugin_traffic: yes
+          
+          # Plugins - Coding activity
           plugin_wakatime: yes
           plugin_wakatime_days: 365
           plugin_wakatime_limit: 5
