@@ -31,7 +31,7 @@ jobs:
           config_display: columns
           config_octicon: yes
           config_padding: 5, 8 + 11%
-          config_presets: @lunar-red
+          config_presets: lunar-red
           config_timezone: America/Chicago
           config_twemoji: yes
           plugin_achievements: yes
