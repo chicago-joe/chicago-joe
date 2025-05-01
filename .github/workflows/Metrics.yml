@@ -22,13 +22,13 @@ jobs:
           
           output_action: commit
           
-          committer_branch: metrics-renders
+          committer_branch: metrics_renders
           committer_message: "chore: update metrics [skip ci]"
 
           # Workflow cleanup
           clean_workflows: cancelled        # all, failure, success, startup_failure, timed_out, skipped
           optimize: css, xml, svg
-          use_prebuilt_image: yes
+          # use_prebuilt_image: yes
           verify: yes
           debug_print: yes
 
