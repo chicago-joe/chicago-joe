@@ -15,16 +15,16 @@ jobs:
 
     steps:
       # 1) Ensure xzcat exists for Nokogiri
-      - name: Install xz-utils and LZMA headers
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y xz-utils liblzma-dev
+      # - name: Install xz-utils and LZMA headers
+        # run: |
+          # sudo apt-get update
+          # sudo apt-get install -y xz-utils liblzma-dev
 
       # 2) Remove redundant Google repo list to silence warnings
-      - name: Remove duplicate Google repo list
-        run: sudo rm -f /etc/apt/sources.list.d/google.list
+      # - name: Remove duplicate Google repo list
+        # run: sudo rm -f /etc/apt/sources.list.d/google.list
 
-      - uses: chicago-joe/metrics@master
+      - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           
@@ -39,7 +39,7 @@ jobs:
           # Workflow cleanup
           clean_workflows: cancelled        # all, failure, success, startup_failure, timed_out, skipped
           optimize: css, xml, svg
-          use_prebuilt_image: no
+          use_prebuilt_image: yes
           verify: yes
           debug_print: yes
 
