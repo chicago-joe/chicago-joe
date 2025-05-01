@@ -1,7 +1,7 @@
 # Visit https://github.com/lowlighter/metrics#-documentation for full reference
-name: Metrics
+name: Update GitHub Metrics
+
 on:
-  # Schedule updates (each day)
   schedule: [{cron: "0 7 * * *"}]
   # Run workflow manually and on each commit to main branches
   workflow_dispatch:
@@ -13,114 +13,147 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: chicago-joe/metrics@master
         with:
-          # GitHub authentication
           token: ${{ secrets.METRICS_TOKEN }}
-          
-          # User configuration
-          user: chicago-joe
           
           # Output configuration
           filename: github-metrics.svg
+          
           output_action: commit
+          
           committer_branch: metrics-renders
           committer_message: "chore: update metrics [skip ci]"
 
           # Workflow cleanup
-          clean_workflows: yes        
+          clean_workflows: cancelled        # all, failure, success, startup_failure, timed_out, skipped
+          optimize: css, xml, svg
+          use_prebuilt_image: yes
+          verify: yes
+          debug_print: yes
+
+          experimental_features: --optimize-svg
           
           # Error handling and retries
           retries: 3
           retries_delay: 300
           retries_output_action: 5
           retries_delay_output_action: 120
+          delay: 180
           
-          # Visual configuration
+          user: chicago-joe
           template: classic
-          config_display: columns
+          
+          base: activity, community, repositories, metadata
+          base_hireable: yes
+          base_indepth: yes
+          
+          commits_authoring: chicago-joe,jloss94@gmail.com,connect@josephjloss.com
+          config_order: base.header,plugin_introduction,plugin_languages,plugin_stars,plugin_notable,plugin_repositories,plugin_isocalendar,plugin_activity,plugin_wakatime,plugin_lines,plugin_habits,plugin_topics,plugin_traffic,plugin_pagespeed,plugin_music,plugin_steam    
+          config_display: regular
           config_octicon: yes
-          config_padding: 0, 8 + 11%
-          #config_presets: "@lunar-red"
+          # config_padding: 2, 8 + 11%
+          config_padding: 5
           config_timezone: America/Chicago
           config_twemoji: yes
           
-          # Base sections
-          base: header, activity, community, repositories, metadata
-          base_indepth: yes
+          config_output: auto    #svg png jpeg json markdown markdown-pdf
           
-          # Plugins - Achievements & Activity
           plugin_achievements: yes
           plugin_achievements_display: detailed
-          plugin_achievements_limit: 5
           plugin_achievements_secrets: yes
           plugin_achievements_threshold: B
+          
           plugin_activity: yes
-          plugin_activity_days: 90
+          plugin_activity_days: 30
           plugin_activity_filter: all
           plugin_activity_limit: 5
           plugin_activity_load: 300
           plugin_activity_timestamps: yes
           plugin_activity_visibility: all
           
-          # Plugins - Calendar & Habits
           plugin_calendar: yes
-          plugin_calendar_limit: 3
+          plugin_calendar_limit: 1
+          
           plugin_habits: yes
           plugin_habits_charts: yes
-          plugin_habits_charts_type: chartist
-          plugin_habits_days: 90
+          plugin_habits_charts_type: graph
+          plugin_habits_days: 30
           plugin_habits_facts: yes
           plugin_habits_from: 200
           plugin_habits_languages_limit: 8
-          plugin_habits_languages_threshold: 10%
+          plugin_habits_languages_threshold: 15%
           plugin_habits_trim: yes
           
-          # Plugins - Profile & Development
           plugin_introduction: yes
           plugin_introduction_title: yes
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
           
-          # Plugins - Languages & Code
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          
           plugin_languages: yes
           plugin_languages_analysis_timeout: 15
           plugin_languages_analysis_timeout_repositories: 7.5
           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
-          plugin_languages_indepth: yes
-          plugin_languages_limit: 8
+          plugin_languages_details: percentage
+          plugin_languages_limit: 12
           plugin_languages_other: yes
           plugin_languages_recent_categories: markup, programming
           plugin_languages_recent_days: 14
           plugin_languages_recent_load: 300
           plugin_languages_sections: most-used
           plugin_languages_threshold: 10%
+          
           plugin_lines: yes
-          plugin_lines_history_limit: 5
-          plugin_lines_repositories_limit: 4
+          plugin_lines_delay: 15
+          plugin_lines_history_limit: 4
+          plugin_lines_repositories_limit: 2
           plugin_lines_sections: base
           
-          # Plugins - Notable contributions
+          plugin_music: yes
+          plugin_music_limit: 3
+          plugin_music_mode: recent
+          plugin_music_played_at: yes
+          plugin_music_provider: spotify
+          plugin_music_time_range: long
+          plugin_music_top_type: tracks
+          plugin_music_user: bjl94
+          
           plugin_notable: yes
-          plugin_notable_from: all
+          plugin_notable_from: user
           plugin_notable_indepth: yes
           plugin_notable_repositories: yes
           plugin_notable_self: yes
           plugin_notable_types: commit
           
-          # Plugins - Repositories & Community
-          plugin_repositories: yes
-          plugin_repositories_order: featured, pinned, starred, random
-          plugin_repositories_pinned: 5
-          plugin_repositories_random: 1
-          plugin_repositories_starred: 2
-          plugin_stargazers: no
-          plugin_stargazers_charts: no
-          plugin_stargazers_charts_type: graph
-          plugin_stargazers_days: 90
-          plugin_traffic: yes
+          plugin_pagespeed: yes
+          plugin_pagespeed_url: https://josephjloss.com
           
+          plugin_repositories: yes
+          plugin_repositories_order: pinned, starred, random
+          plugin_repositories_pinned: 10
+          
+          plugin_screenshot: yes
+          plugin_screenshot_background: yes
+          plugin_screenshot_mode: image
+          plugin_screenshot_selector: body
+          plugin_screenshot_title: Screenshot
+          plugin_screenshot_url: https://josephjloss.com
+          # plugin_screenshot_viewport: '{"width": 1280, "height": 1280}'
+          plugin_screenshot_wait: 50
+          
+          plugin_stargazers: yes
+          plugin_stargazers_charts: yes
+          plugin_stargazers_charts_type: graph
+          plugin_stargazers_days: 365
+          
+          plugin_topics: yes
+          plugin_topics_limit: 3
+          plugin_topics_mode: icons
+          plugin_topics_sort: starred
+          plugin_traffic: yes
+
           # Plugins - Gaming & External
           plugin_steam: yes
           plugin_steam_achievements_limit: 3
