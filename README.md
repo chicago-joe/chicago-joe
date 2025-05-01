@@ -25,14 +25,11 @@
 
 ---
 
-<!-- Preferred: explicit raw URL -->
-<p align="left">
-  <img
-    src="https://raw.githubusercontent.com/chicagojoe/Metrics/metrics_render/github-metrics.svg"
-    alt="Metrics"
-    width="650"
-  >
-</p>
+<a href="#">
+  <img src="https://raw.githubusercontent.com/chicagojoe/Metrics/metrics_render/github-metrics.svg" alt="Metrics" width="650" />
+</a>
+
+<!-- <p align="left">  </p> -->
 
 <!-- <picture> -->
 <!--   <img src="https://raw.githubusercontent.com/chicago-joe/chicago-joe/metrics-renders/github-metrics.svg" alt="Metrics"> -->
