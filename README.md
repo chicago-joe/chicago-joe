@@ -25,11 +25,16 @@
 
 ---
 
-<a href="#">
-  <img src="https://raw.githubusercontent.com/chicagojoe/Metrics/metrics_render/github-metrics.svg" alt="Metrics" width="650" />
-</a>
+<p align="left">
+<!--   <picture> -->
+    <img
+      src="https://raw.githubusercontent.com/chicago-joe/chicago-joe/metrics_render/github-metrics.svg"
+      alt="Metrics"
+      width="650"
+    />
+<!--   </picture> -->
+</p>
 
-<!-- <p align="left">  </p> -->
 
 <!-- <picture> -->
 <!--   <img src="https://raw.githubusercontent.com/chicago-joe/chicago-joe/metrics-renders/github-metrics.svg" alt="Metrics"> -->
