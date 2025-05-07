@@ -52,9 +52,9 @@ jobs:
           config_order: |
             # "base.header",
             "introduction",
-            "base",
-            # "base.activity+community",
-            # "base.repositories",
+            # "base",
+            "base.activity+community",
+            "base.repositories",
             notable,
             lines,
             habits,
@@ -62,12 +62,12 @@ jobs:
             wakatime,
             topics,
             traffic,
-            music,
+            # music,
             stars,
-            languages,
+            # languages,
             isocalendar,
             activity,
-            steam    
+            # steam    
           config_display: regular
           config_octicon: yes
           # config_padding: 2, 8 + 11%
