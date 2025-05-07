@@ -71,9 +71,6 @@
   </a>
 
   <!-- Web & APIs -->
-  <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="Flask" width="50" height="50" />
-  </a>
   <a href="https://graphql.org" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg" alt="GraphQL" width="50" height="50" />
   </a>
@@ -117,9 +114,6 @@
   <a href="https://www.dask.org/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/dask/dask-icon.svg" alt="Dask" width="50" height="50" />
   </a>
-  <a href="https://neptune.ai/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/neptune/neptune-icon.svg" alt="Neptune" width="50" height="50" />
-  </a>
 
   <!-- Editors & Packaging -->
   <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noreferrer">
@@ -135,9 +129,6 @@
   </a>
   <a href="https://wakatime.com/" target="_blank" rel="noreferrer">
     <img src="https://worldvectorlogo.com/logos/wakatime.svg" alt="Wakatime" width="50" height="50" />
-  </a>
-  <a href="https://toml.io/en/" target="_blank" rel="noreferrer">
-    <img src="https://worldvectorlogo.com/logos/toml.svg" alt="TOML" width="50" height="50" />
   </a>
 </p>
 
@@ -175,11 +166,11 @@
 ---
 
 <p align="center">
-<!--   <picture> -->
+  <picture>
     <img
       src="https://raw.githubusercontent.com/chicago-joe/chicago-joe/metrics-renders/github-metrics.svg"
       alt="Metrics"
       width="600"
     />
-<!--   </picture> -->
+  </picture>
 </p>
