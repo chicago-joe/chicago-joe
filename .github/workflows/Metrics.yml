@@ -44,7 +44,7 @@ jobs:
           user: chicago-joe
 #          template: classic
           
-          base: header, activity, community, repositories #, metadata
+          base: header, activity, community, repositories, metadata
           base_hireable: yes
           base_indepth: yes
           
@@ -52,16 +52,19 @@ jobs:
           config_order: |
             # "base.header",
             "introduction",
-            # "base",
-            "base.activity+community",
-            "base.repositories",
-            notable,
-            lines,
+            base,
             habits,
-            repositories,
+            
+            # "base.activity+community",
+            # "base.repositories",
             wakatime,
             topics,
             traffic,
+            
+            # notable,
+            lines,
+            
+            repositories,
             # music,
             stars,
             # languages,
