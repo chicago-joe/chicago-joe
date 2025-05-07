@@ -170,7 +170,7 @@
     <img
       src="https://raw.githubusercontent.com/chicago-joe/chicago-joe/metrics-renders/github-metrics.svg"
       alt="Metrics"
-      width="500"
+      width="670"
     />
   </picture>
 </p>
