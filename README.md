@@ -28,7 +28,7 @@
 <p align="left">
 <!--   <picture> -->
     <img
-      src="https://raw.githubusercontent.com/chicago-joe/chicago-joe/metrics_render/github-metrics.svg"
+      src="https://raw.githubusercontent.com/chicago-joe/chicago-joe/metrics-renders/github-metrics.svg"
       alt="Metrics"
       width="650"
     />
