@@ -39,7 +39,7 @@ jobs:
           # Workflow cleanup
           clean_workflows: cancelled        # all, failure, success, startup_failure, timed_out, skipped
           optimize: css, xml, svg
-          use_prebuilt_image: yes
+          use_prebuilt_image: no
           verify: yes
           debug_print: yes
 
@@ -59,7 +59,7 @@ jobs:
           base_hireable: yes
           base_indepth: yes
           
-          commits_authoring: chicago-joe,jloss94@gmail.com,connect@josephjloss.com
+          commits_authoring: chicago-joe, jloss94@gmail.com, connect@josephjloss.com
           config_order: |
             # "base.header",
             "introduction",
