@@ -18,7 +18,7 @@
 </a>
 &nbsp;
 <a href="mailto:connect@josephjloss.com" target="_blank">
-<img height="40" width="50" src="https://cdn.simpleicons.org/gmail?viewbox=auto" />
+<img height="40" width="50" src="https://cdn.simpleicons.org/gmail" />
 </a>
 
 </div>
@@ -165,12 +165,12 @@
 
 ---
 
-<p align="center">
+<p align="left">
   <picture>
     <img
       src="https://raw.githubusercontent.com/chicago-joe/chicago-joe/metrics-renders/github-metrics.svg"
       alt="Metrics"
-      width="600"
+      width="500"
     />
   </picture>
 </p>
