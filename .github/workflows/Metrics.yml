@@ -42,9 +42,9 @@ jobs:
           delay: 180
           
           user: chicago-joe
-          template: classic
+#          template: classic
           
-          base: header, activity, community, repositories, metadata
+          base: header, activity, community, repositories #, metadata
           base_hireable: yes
           base_indepth: yes
           
@@ -52,8 +52,9 @@ jobs:
           config_order: |
             # "base.header",
             "introduction",
-            "base.activity+community",
-            "base.repositories",
+            "base",
+            # "base.activity+community",
+            # "base.repositories",
             notable,
             lines,
             habits,
@@ -76,9 +77,9 @@ jobs:
           
           config_output: auto    #svg png jpeg json markdown markdown-pdf
           
-          plugin_achievements: yes
+          plugin_achievements: no
           plugin_achievements_display: detailed
-          plugin_achievements_secrets: yes
+          plugin_achievements_secrets: no
           plugin_achievements_threshold: A
           
           plugin_activity: yes
@@ -136,6 +137,7 @@ jobs:
           plugin_music_time_range: long
           plugin_music_top_type: tracks
           plugin_music_user: bjl94
+          plugin_music_token: ${{ secrets.SPOTIFY_API_KEY }}
           
           plugin_notable: yes
           plugin_notable_from: user
@@ -145,14 +147,13 @@ jobs:
           plugin_notable_types: commit
           
           plugin_pagespeed: no
-          # plugin_pagespeed_url: https://josephjloss.com
           
           plugin_repositories: yes
           plugin_repositories_order: pinned, starred, random
           plugin_repositories_pinned: 10
           
-          plugin_screenshot: yes
-          plugin_screenshot_background: yes
+          plugin_screenshot: no
+          plugin_screenshot_background: no
           plugin_screenshot_mode: image
           plugin_screenshot_selector: body
           plugin_screenshot_title: Screenshot
@@ -165,10 +166,11 @@ jobs:
           plugin_stargazers_charts_type: graph
           plugin_stargazers_days: 365
           
-          plugin_topics: yes
+          plugin_topics: no
           plugin_topics_limit: 3
           plugin_topics_mode: icons
           plugin_topics_sort: starred
+          
           plugin_traffic: yes
 
           # Plugins - Gaming & External
