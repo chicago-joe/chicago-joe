@@ -10,14 +10,14 @@
 <div align="center">
 
 ### 👨‍💻 All of my projects are available at:  
-🌐 [**https://josephjloss.com**](https://josephjloss.com)
+🌐 [**https://chicagojoe.dev**](https://chicagojoe.dev)
 
 ### 🤝 Connect with me:
 <a href="https://linkedin.com/in/josephjloss" target="_blank">
     <img height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" /> 
 </a>
 &nbsp;
-<a href="mailto:connect@josephjloss.com" target="_blank">
+<a href="mailto:contact@mail.chicagojoe.dev" target="_blank">
 <img height="40" width="50" src="https://cdn.simpleicons.org/gmail" />
 </a>
 
