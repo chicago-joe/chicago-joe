@@ -17,7 +17,7 @@
     <img height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" /> 
 </a>
 &nbsp;
-<a href="mailto:contact@mail.chicagojoe.dev" target="_blank">
+<a href="mailto:connect@mail.chicagojoe.dev" target="_blank">
 <img height="40" width="50" src="https://cdn.simpleicons.org/gmail" />
 </a>
 
